@@ -21,7 +21,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: helm-guestbook
+                name: {{ template "helm-guestbook.fullname" . }}
                 port:
                   number: 80
   tls:
