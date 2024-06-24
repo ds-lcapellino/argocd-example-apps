@@ -112,3 +112,35 @@ spec:
           image: alpine:latest
           command: ["sleep", "2"]
       restartPolicy: Never
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sync-waves-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+#    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+#    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+#    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+#
+#    # If you encounter a redirect loop or are getting a 307 response code
+#    # then you need to force the nginx ingress to connect to the backend using HTTPS.
+#    #
+#    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  rules:
+    - host: sync-waves.int.catena-x.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - sync-waves.int.catena-x.net
+      secretName: tls-secret-sync-waves
