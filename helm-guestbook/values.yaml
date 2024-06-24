@@ -45,3 +45,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+vault-test:
+  value: <path:test/data/dev#catenax_portal_api_url>
