@@ -27,7 +27,7 @@ spec:
   tls:
     - hosts:
         - guestbook.int.catena-x.net
-      secretName: tls-secret-sync-waves
+      secretName: tls-secret-guestbook
 
 
 
