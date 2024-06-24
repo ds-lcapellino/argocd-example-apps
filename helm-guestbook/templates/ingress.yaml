@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 
@@ -27,7 +27,7 @@ spec:
   tls:
     - hosts:
         - guestbook.int.catena-x.net
-      secretName: tls-secret-argocd
+      secretName: tls-secret-guestbook
 
 
 
