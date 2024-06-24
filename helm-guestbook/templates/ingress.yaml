@@ -23,7 +23,7 @@ spec:
               service:
                 name: {{ template "helm-guestbook.fullname" . }}
                 port:
-                  number: 80
+                  name: http
   tls:
     - hosts:
         - guestbook.int.catena-x.net
