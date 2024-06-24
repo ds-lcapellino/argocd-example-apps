@@ -13,11 +13,8 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: 80
       protocol: TCP
+      appProtocol: https
       name: http
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 80
   selector:
     app: {{ template "helm-guestbook.name" . }}
     release: {{ .Release.Name }}
