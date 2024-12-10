@@ -45,3 +45,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+vaultTest:
+  value: <path:external-ouranos-cx-collab/data/path#testSecretData>
