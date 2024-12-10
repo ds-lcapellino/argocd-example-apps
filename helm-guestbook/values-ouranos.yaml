@@ -45,6 +45,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-vaultTest:
-  value: <path:test/data/path#testSecretData>
