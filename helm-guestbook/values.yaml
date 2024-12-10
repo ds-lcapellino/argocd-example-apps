@@ -21,8 +21,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   path: /
-  hosts:
-    - guestbook.int.catena-x.net
+  host: guestbook.int.catena-x.net
   tls:
     - secretName: tls-secret
       hosts:

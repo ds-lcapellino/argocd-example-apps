@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: guestbook-ingress
+  name: {{ .Values.fullNameOverride }}-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
@@ -9,7 +9,7 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   rules:
-    - host: guestbook.int.catena-x.net
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /
@@ -21,8 +21,8 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - guestbook.int.catena-x.net
-      secretName: tls-secret-guestbook
+        - {{ .Values.ingress.host }}
+      secretName: tls-secret-{{ .Values.fullNameOverride }}
 
 
 
