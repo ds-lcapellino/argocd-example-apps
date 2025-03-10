@@ -47,4 +47,4 @@ tolerations: []
 affinity: {}
 
 vaultTest:
-  value: <path:factory-x/data/path#testSecretData>
+  value: <path:factory-x-ci-cd/data/path#testSecretData>
