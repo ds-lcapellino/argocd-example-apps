@@ -23,6 +23,10 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   host: guestbook-factory-x.factory-x.catena-x.net
+  tls:
+    - secretName: tls-secret-guestbook
+      hosts:
+        - guestbook-factory-x.factory-x.catena-x.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
